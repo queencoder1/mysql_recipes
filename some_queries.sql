@@ -1,9 +1,9 @@
 /* get all the ingredients with names */ 
-SELECT r.name AS 'Recipe', r.instructions, ri.amount AS 'Amount', mu.name AS 'Unit of Measure', i.name AS 'Ingredient' 
-FROM Recipe r 
-JOIN RecipeIngredient ri on r.id = ri.recipe_id 
-JOIN Ingredient i on i.id = ri.ingredient_id 
-LEFT OUTER JOIN Measure mu on mu.id = measure_id;
+SELECT *
+FROM Recipe 
+JOIN RecipeIngredient on recipe.id = RecipeIngredient.recipe_id 
+JOIN Ingredient on ingredient.id = RecipeIngredient.ingredient_id 
+LEFT OUTER JOIN Measure on measure.id = measure_id;
 
 /*get a list of recipes */ 
 SELECT * from Recipe
